@@ -1,6 +1,6 @@
-import searchURL from './tranding.js'
-const form = ducument.getElementById('search');
+import searchURL from './js/component/api.js'
 
+const form = ducument.getElementById('search');
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
     searchValue=search.value
