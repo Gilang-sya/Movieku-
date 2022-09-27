@@ -1,4 +1,4 @@
-import {IMG_URL,API_URL} from './api'
+import {IMG_URL,API_URL,} from './api'
 
 
 const main = document.getElementById('main');
@@ -20,7 +20,7 @@ const showMovies= (data) =>{
     main.innerHTML = '';
     
     data.forEach(movie => {
-        const{title, poster_path,release_date , vote_average, overview,genre_ids} = movie;
+        const{title, poster_path,release_date , vote_average, overview,} = movie;
         const filmMovie = document.createElement('div');
         filmMovie.classList.add('movie');
         filmMovie.innerHTML=`
@@ -30,7 +30,7 @@ const showMovies= (data) =>{
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
                 <p>Release: ${release_date}</p>
-                <h4>${genre_ids}</h4>
+
             </div>
             <div class="overview">
                 <h3>Overview</h3>

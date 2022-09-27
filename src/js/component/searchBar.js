@@ -16,11 +16,10 @@ class SearchBar extends HTMLElement {
         this.innerHTML=`
         <form id="form">
             <input type="text" class="search"placeholder="Search" id="search">
-            <button id="searchButtonElement" type="submit">Search</button>
+            
         </form>
     `;
-    this.querySelector('#searchButtonElement')
-    .addEventListener('click', this._clickEvent);
+    
     }
 }
 customElements.define('search-bar', SearchBar);
