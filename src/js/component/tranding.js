@@ -1,7 +1,10 @@
-import {IMG_URL,API_URL,} from './api'
+import {IMG_URL,API_URL,searchURL} from './api.js'
 
 
 const main = document.getElementById('main');
+const form =  document.getElementById('form');
+const search = document.getElementById('search');
+
 
 getMovies(API_URL);
 function getMovies(url){
@@ -16,6 +19,7 @@ function getMovies(url){
             console.log(error);
         });
     }
+
 const showMovies= (data) =>{
     main.innerHTML = '';
     
@@ -51,4 +55,14 @@ const getColor=(vote) => {
     }
 }
 
+form.addEventListener('keyup', (e) => {
+    e.preventDefault();
 
+    const searchTerm = search.value;
+
+    if(searchTerm) {
+        getMovies(searchURL+'&query='+searchTerm)
+    }else{
+        getMovies(API_URL);
+    }
+})
